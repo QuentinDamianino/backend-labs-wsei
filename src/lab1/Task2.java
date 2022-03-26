@@ -1,11 +1,10 @@
-package com.company;
+package lab1;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
-public class Main2 {
+public class Task2 {
 
     public static void main(String[] args) throws IOException {
         displayFile("text.txt");

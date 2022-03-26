@@ -1,10 +1,10 @@
-package com.company;
+package lab1;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-public class Main3 {
+public class Task3 {
 
     public static void main(String[] args) {
         System.out.println("Podaj tekst: ");

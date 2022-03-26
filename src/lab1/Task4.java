@@ -1,15 +1,9 @@
-package com.company;
+package lab1;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.sql.Time;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
-public class Main4 {
+public class Task4 {
 
     public static void main(String[] args) {
         displayLocalTime();
