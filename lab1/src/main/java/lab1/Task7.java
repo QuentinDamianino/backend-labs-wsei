@@ -7,7 +7,7 @@ public class Task7 {
     public static void main(String[] args) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        User userObject = new User("John", 21);
+        User userObject = new User();
 
         String userJson = null;
 
