@@ -1,27 +1,35 @@
 package lab1;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 public class Task2 {
 
-    public static void main(String[] args) throws IOException {
-        displayFile("text.txt");
+    public static void main(String[] args) {
+        System.out.println("Podaj tekst: ");
+
+        Scanner scanner = new Scanner(System.in);
+        String content = scanner.nextLine();
+
+        saveFile(content);
     }
 
+    public static void saveFile(String content)
+    {
+        try {
+            File file = new File("testSave.txt");
+            FileOutputStream output = new FileOutputStream(file);
 
-    public static void displayFile(String fileName) throws IOException {
-        try (FileInputStream input = new FileInputStream(new File(fileName))) {
-            int data;
+            byte[] b = content.getBytes(StandardCharsets.UTF_8);
 
-            while ((data = input.read()) != -1) {
-                System.out.print((char)data);
-            }
-        }
-        catch (IOException e) {
+            output.write(b);
+            output.close();
+
+            System.out.println("Success");
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

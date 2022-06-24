@@ -1,35 +1,36 @@
 package lab1;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
-
 public class Task3 {
 
     public static void main(String[] args) {
-        System.out.println("Podaj tekst: ");
+        int[] array = {4, 5, 7, 11, 12, 15, 15, 21, 40, 45};
+        int index = searchIndex(array, 11);
 
-        Scanner scanner = new Scanner(System.in);
-        String content = scanner.nextLine();
-
-        saveFile(content);
+        System.out.println(index);
     }
 
-    public static void saveFile(String content)
+    public static int searchIndex(int[] array, int value)
     {
-        try {
-            File file = new File("testSave.txt");
-            FileOutputStream output = new FileOutputStream(file);
+        int index = 0;
+        int limit = array.length - 1;
 
-            byte[] b = content.getBytes(StandardCharsets.UTF_8);
+        while (index <= limit) {
+            int point = (int) (Math.ceil((index + limit) / 2));
 
-            output.write(b);
-            output.close();
+            int entry = array[point];
 
-            System.out.println("Success");
+            if (value > entry) {
+                index = point + 1;
+                continue;
+            }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            if (value < entry) {
+                limit = point - 1;
+                continue;
+            }
+
+            return point;
         }
+        return -1;
     }
 }

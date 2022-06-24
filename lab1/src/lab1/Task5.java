@@ -3,7 +3,7 @@ package lab1;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Task4 {
+public class Task5 {
 
     public static void main(String[] args) {
         displayLocalTime();
