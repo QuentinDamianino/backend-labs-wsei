@@ -8,6 +8,8 @@ public class Task7 {
         ObjectMapper objectMapper = new ObjectMapper();
 
         User userObject = new User();
+        userObject.setAge(21);
+        userObject.setName("John");
 
         String userJson = null;
 
